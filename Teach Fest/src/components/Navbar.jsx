@@ -24,6 +24,7 @@ export default function Navbar() {
             { name: "Gallery", path: "/gallery" },
             { name: "Teams", path: "/community" },
             { name: "Contact", path: "/contact" },
+            { name: "Volunteers", path: "/volunteer-portal" },
           ].map((item) => (
             <NavLink
               key={item.name}
@@ -54,3 +55,4 @@ export default function Navbar() {
     </header>
   );
 }
+
