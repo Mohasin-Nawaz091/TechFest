@@ -7,13 +7,13 @@ import Register from "../pages/Register";
 import Sponsors from "../pages/Sponsors";
 import Community from "../pages/Community";
 import Contact from "../pages/Contact";
-<<<<<<< HEAD
 import Schedule from "../pages/Schedule";
 import Speakers from "../pages/Speakers";
-=======
 import Gallery from "../pages/Gallery";
 import AdminDashboard from "../pages/AdminDashboard";
->>>>>>> 6b9fed5 (Added Web Pages with dummy data)
+
+// New page
+import VolunteerPortal from "../pages/VolunteerPortal";
 
 export default function AppRoutes() {
   return (
@@ -30,7 +30,11 @@ export default function AppRoutes() {
         <Route path="/speakers" element={<Speakers />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/admin" element={<AdminDashboard />} />
+        
+        {/* New Volunteer Portal Route */}
+        <Route path="/volunteer-portal" element={<VolunteerPortal />} />
       </Routes>
     </BrowserRouter>
   );
 }
+
