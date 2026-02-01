@@ -5,7 +5,7 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        
+
         <Link to="/" className="flex items-center">
           <img
             src={logo}
@@ -14,13 +14,14 @@ export default function Navbar() {
           />
         </Link>
 
-       
+
         <nav className="hidden md:flex items-center gap-8 font-medium text-gray-700">
           {[
             { name: "Home", path: "/" },
             { name: "Events", path: "/events" },
             { name: "Register", path: "/register" },
             { name: "Sponsors", path: "/sponsors" },
+            { name: "Gallery", path: "/gallery" },
             { name: "Teams", path: "/community" },
             { name: "Contact", path: "/contact" },
           ].map((item) => (
@@ -28,10 +29,9 @@ export default function Navbar() {
               key={item.name}
               to={item.path}
               className={({ isActive }) =>
-                `relative transition-colors ${
-                  isActive
-                    ? "text-primary font-semibold"
-                    : "hover:text-primary"
+                `relative transition-colors ${isActive
+                  ? "text-primary font-semibold"
+                  : "hover:text-primary"
                 }`
               }
             >
@@ -40,7 +40,7 @@ export default function Navbar() {
           ))}
         </nav>
 
-     
+
         <Link
           to="/register"
           className="px-6 py-2.5 rounded-xl font-semibold text-white

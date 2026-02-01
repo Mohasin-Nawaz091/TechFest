@@ -13,10 +13,10 @@ import logo from "../assets/techfestwhite.svg";
 export default function Footer() {
   return (
     <footer className="mt-24 bg-gradient-to-br from-black via-[#0b0f1a] to-black text-gray-300">
-   
+
       <div className="max-w-7xl mx-auto px-6 py-16 grid gap-12 md:grid-cols-4">
-        
-     
+
+
         <div>
           <img src={logo} alt="TechFest Logo" className="h-12 mb-4" />
           <p className="text-sm text-gray-400 leading-relaxed">
@@ -36,7 +36,7 @@ export default function Footer() {
           </div>
         </div>
 
-       
+
         <div>
           <h4 className="font-semibold text-white mb-4">Quick Links</h4>
           <ul className="space-y-2 text-sm">
@@ -46,10 +46,11 @@ export default function Footer() {
             <li><Link to="/sponsors" className="hover:text-white">Sponsors</Link></li>
             <li><Link to="/community" className="hover:text-white">Teams</Link></li>
             <li><Link to="/contact" className="hover:text-white">Contact</Link></li>
+            <li><Link to="/admin" className="hover:text-white text-primary">Admin Portal</Link></li>
           </ul>
         </div>
 
-   
+
         <div>
           <h4 className="font-semibold text-white mb-4">Competitions</h4>
           <ul className="space-y-2 text-sm text-gray-400">

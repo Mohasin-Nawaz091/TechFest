@@ -20,3 +20,76 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+/* Global Design Tokens matching techfest-2026 */
+:root {
+  /* Global Design Tokens */
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F3F4F6;
+  /* Light Gray for sections */
+  --text-primary: #111827;
+  /* Near Black */
+  --text-secondary: #4B5563;
+  /* Gray */
+  --text-tertiary: #9CA3AF;
+  /* Light Gray */
+
+  /* Brand Colors */
+  --electric-blue: #2962FF;
+  /* Primary Action Color */
+  --neon-cyan: #00E5FF;
+  /* Secondary/Accent Color */
+  --tech-purple: #2962FF;
+  /* Unified to Blue */
+
+  /* Card System (Light) */
+  --card-bg: #FFFFFF;
+  --card-border: #E5E7EB;
+  --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --glass-bg: rgba(255, 255, 255, 0.8);
+  --glass-border: rgba(229, 231, 235, 0.5);
+
+  /* Fonts */
+  --font-heading: 'Inter', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+/* Button Styles from techfest-2026 */
+.btn-large {
+  background: var(--electric-blue);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 6px -1px rgba(41, 98, 255, 0.2), 0 2px 4px -1px rgba(41, 98, 255, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-large:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(41, 98, 255, 0.3);
+}
+
+.btn-small {
+  background: rgba(41, 98, 255, 0.1);
+  color: var(--electric-blue);
+  border: none;
+  padding: 0.5rem 1.25rem;
+  border-radius: 50px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-small:hover {
+  background: rgba(41, 98, 255, 0.15);
+}
