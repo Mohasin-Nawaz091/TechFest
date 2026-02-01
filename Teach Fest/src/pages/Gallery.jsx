@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import { Download, Camera, Video, Film, Grid, Play, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import './Gallery.css';
 
 const Gallery = () => {
     const [filter, setFilter] = useState('All');
     const [selectedItem, setSelectedItem] = useState(null);
-
 
     const mediaItems = [
         { id: 1, type: 'Photos', src: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80', height: 400 },
@@ -33,10 +31,10 @@ const Gallery = () => {
     ];
 
     return (
-        <div className="gallery-container">
-            <header className="gallery-header">
+        <div className="min-h-screen px-4 lg:px-40 py-28 bg-gray-50 text-gray-900 font-sans">
+            <header className="text-center mb-16">
                 <motion.h1
-                    className="gallery-title"
+                    className="text-5xl font-extrabold mb-8"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.8 }}
@@ -44,24 +42,26 @@ const Gallery = () => {
                     Gallery
                 </motion.h1>
 
-
-
-                <div className="filter-bar">
+                <div className="flex justify-center gap-4 flex-wrap mb-12">
                     {categories.map((cat) => (
                         <button
                             key={cat.name}
-                            className={`filter-btn ${filter === cat.name ? 'active' : ''}`}
+                            className={`px-5 py-2.5 rounded-full font-medium flex items-center gap-2 transition-all duration-300 border ${filter === cat.name
+                                ? 'bg-primary text-white border-primary shadow-lg shadow-primary/30'
+                                : 'bg-white text-gray-600 border-gray-200 hover:bg-primary hover:text-white hover:border-primary'
+                                }`}
                             onClick={() => setFilter(cat.name)}
-                            style={filter === cat.name ? { background: 'var(--electric-blue)', color: 'white' } : {}}
                         >
+                            <cat.icon size={18} />
                             {cat.name}
                         </button>
                     ))}
                 </div>
             </header>
 
-            <div className="gallery-grid-wrapper" style={{ position: 'relative' }}>
-                <motion.div className="gallery-grid"
+            <div className="max-w-[1200px] mx-auto min-h-[600px]">
+                <motion.div
+                    className="columns-1 md:columns-2 lg:columns-4 gap-6 space-y-6"
                     initial="hidden"
                     animate="show"
                     variants={{
@@ -86,23 +86,22 @@ const Gallery = () => {
                                 exit={{ opacity: 0 }}
                                 transition={{ duration: 0.5, ease: "easeInOut" }}
                                 key={item.id}
-                                className="gallery-item"
+                                className="break-inside-avoid relative rounded-2xl overflow-hidden bg-white shadow-md border border-gray-100 group cursor-pointer hover:-translate-y-2 hover:shadow-xl transition-all duration-300"
                                 onClick={() => setSelectedItem(item)}
                             >
                                 <img
                                     src={item.src}
                                     alt={item.type}
-                                    className="media-content"
-                                    style={{ height: 'auto', display: 'block', minHeight: item.height }}
+                                    className="w-full h-auto block"
                                     loading="lazy"
                                 />
                                 {item.type === 'Videos' && (
-                                    <div className="video-indicator">
-                                        <Play fill="white" size={20} />
+                                    <div className="absolute top-4 right-4 bg-black/60 backdrop-blur-md w-10 h-10 rounded-full flex items-center justify-center border border-white/20 z-10">
+                                        <Play fill="white" size={20} className="text-white ml-1" />
                                     </div>
                                 )}
-                                <div className="item-overlay">
-                                    <button className="view-btn">
+                                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                    <button className="bg-white text-primary px-6 py-2 rounded-full font-semibold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
                                         {item.type === 'Videos' ? 'Watch Reel' : 'View Image'}
                                     </button>
                                 </div>
@@ -110,16 +109,15 @@ const Gallery = () => {
                         ))}
                     </AnimatePresence>
                 </motion.div>
-
             </div>
 
             <motion.div
-                className="cta-container"
+                className="flex justify-center mt-20"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5 }}
             >
-                <button className="btn-large" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <button className="flex items-center gap-3 px-8 py-4 bg-electric-blue text-white rounded-xl font-bold text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 bg-blue-600">
                     <Download size={20} />
                     Download Media Kit
                 </button>
@@ -129,29 +127,32 @@ const Gallery = () => {
             <AnimatePresence>
                 {selectedItem && (
                     <motion.div
-                        className="lightbox-overlay"
+                        className="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-4"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         onClick={() => setSelectedItem(null)}
                     >
                         <motion.div
-                            className="lightbox-content"
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
+                            className="relative max-w-5xl max-h-[90vh] bg-black rounded-2xl overflow-hidden shadow-2xl"
+                            initial={{ scale: 0.9, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0.9, opacity: 0 }}
                             onClick={(e) => e.stopPropagation()}
                         >
-                            <button className="close-btn" onClick={() => setSelectedItem(null)}>
+                            <button
+                                className="absolute top-4 right-4 bg-black/50 text-white p-2 rounded-full hover:bg-black/80 transition-all z-10"
+                                onClick={() => setSelectedItem(null)}
+                            >
                                 <X size={24} />
                             </button>
                             <img
                                 src={selectedItem.src}
                                 alt={selectedItem.type}
-                                className="lightbox-image"
+                                className="max-w-full max-h-[85vh] object-contain block"
                             />
-                            <div className="lightbox-info">
-                                <h3>{selectedItem.type}</h3>
+                            <div className="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black/80 to-transparent text-white">
+                                <h3 className="text-xl font-bold">{selectedItem.type}</h3>
                             </div>
                         </motion.div>
                     </motion.div>
