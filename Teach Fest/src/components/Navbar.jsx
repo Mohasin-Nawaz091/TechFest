@@ -24,6 +24,8 @@ export default function Navbar() {
             { name: "Gallery", path: "/gallery" },
             { name: "Teams", path: "/community" },
             { name: "Contact", path: "/contact" },
+            { name: "Schedule", path: "/schedule" }, 
+            { name: "Speakers", path: "/speakers" },
           ].map((item) => (
             <NavLink
               key={item.name}

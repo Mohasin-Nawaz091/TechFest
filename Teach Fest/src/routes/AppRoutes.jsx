@@ -7,13 +7,11 @@ import Register from "../pages/Register";
 import Sponsors from "../pages/Sponsors";
 import Community from "../pages/Community";
 import Contact from "../pages/Contact";
-<<<<<<< HEAD
 import Schedule from "../pages/Schedule";
 import Speakers from "../pages/Speakers";
-=======
 import Gallery from "../pages/Gallery";
 import AdminDashboard from "../pages/AdminDashboard";
->>>>>>> 6b9fed5 (Added Web Pages with dummy data)
+// 6b9fed5 (Added Web Pages with dummy data)
 
 export default function AppRoutes() {
   return (
