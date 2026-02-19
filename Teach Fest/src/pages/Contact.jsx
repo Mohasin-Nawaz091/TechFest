@@ -1,9 +1,13 @@
 import React from 'react';
 import { Mail, Phone, MapPin, Send, Linkedin, Instagram, Facebook } from 'lucide-react';
 import { motion } from 'framer-motion';
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const Contact = () => {
   return (
+    <>
+    <Navbar />
     <div className="min-h-screen px-4 lg:px-40 py-20 bg-gray-50 text-gray-900 font-sans flex flex-col gap-16 justify-center">
       <div className="max-w-[1200px] mx-auto w-full grid lg:grid-cols-2 gap-16 items-center">
 
@@ -66,12 +70,12 @@ const Contact = () => {
           <form className="bg-white p-10 rounded-3xl border border-gray-100 shadow-xl flex flex-col gap-6" onSubmit={(e) => e.preventDefault()}>
             <div className="flex flex-col gap-2">
               <label className="text-sm font-medium text-gray-500 ml-1">Name</label>
-              <input type="text" className="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all" placeholder="Zeeshan" />
+              <input type="text" className="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all" placeholder="John Doe" />
             </div>
 
             <div className="flex flex-col gap-2">
               <label className="text-sm font-medium text-gray-500 ml-1">Email</label>
-              <input type="email" className="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all" placeholder="zeeshan@example.com" />
+              <input type="email" className="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all" placeholder="johndoe@example.com" />
             </div>
 
             <div className="flex flex-col gap-2">
@@ -103,6 +107,8 @@ const Contact = () => {
         ></iframe>
       </motion.div>
     </div>
+    <Footer />
+    </>
   );
 };
 export default Contact;

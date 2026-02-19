@@ -27,7 +27,7 @@ export default function Navbar() {
 
             { name: "Schedule", path: "/schedule" }, 
             { name: "Speakers", path: "/speakers" },
-
+            { name: "Admin", path: "/admin" },
             { name: "Volunteers", path: "/volunteer-portal" },
 
           ].map((item) => (

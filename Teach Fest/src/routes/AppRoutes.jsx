@@ -11,13 +11,16 @@ import Schedule from "../pages/Schedule";
 import Speakers from "../pages/Speakers";
 import Gallery from "../pages/Gallery";
 import AdminDashboard from "../pages/AdminDashboard";
-<<<<<<< HEAD
+import EventDetail from "../pages/EventDetail";
+
+
 // 6b9fed5 (Added Web Pages with dummy data)
-=======
 
 // New page
 import VolunteerPortal from "../pages/VolunteerPortal";
->>>>>>> d6c772cd3dd42223ad13043d369011590c5fa7c8
+import PrivacyPolicy from "../pages/PrivacyPolicy";
+import TermsAndConditions from "../pages/TermsAndConditions";
+
 
 export default function AppRoutes() {
   return (
@@ -27,6 +30,8 @@ export default function AppRoutes() {
         <Route path="/about" element={<About />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/events" element={<Events />} />
+        <Route path="/events/:id" element={<EventDetail />} />
+
         <Route path="/register" element={<Register />} />
         <Route path="/sponsors" element={<Sponsors />} />
         <Route path="/community" element={<Community />} />
@@ -37,6 +42,12 @@ export default function AppRoutes() {
         
         {/* New Volunteer Portal Route */}
         <Route path="/volunteer-portal" element={<VolunteerPortal />} />
+        
+        {/* Privacy Policy Route */}
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        
+        {/* Terms and Conditions Route */}
+        <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
       </Routes>
     </BrowserRouter>
   );

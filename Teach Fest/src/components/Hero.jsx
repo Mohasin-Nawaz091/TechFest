@@ -23,8 +23,7 @@ export default function Hero() {
                 </h1>
 
                 <p className="text-[#606e8a] text-lg max-w-[500px]">
-                  Join 5,000+ industry leaders and visionaries to explore the next
-                  frontier of enterprise technology, AI ethics, and digital growth.
+                 Have you ever wondered where your brightest ideas could take you? TechFest 2026 serves as the premier intersection where academic brilliance meets market muscle. We bring brilliant student minds and industry titans under one roof to redefine what’s possible.
                 </p>
               </div>
 

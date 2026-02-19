@@ -10,6 +10,7 @@ import {
   Shield,
   Gamepad2,
   Rocket,
+  Globe,
 } from "lucide-react";
 import { Star } from "lucide-react";
 const testimonials = [
@@ -38,32 +39,32 @@ const testimonials = [
 
 const competitions = [
   {
-    title: "Programming Competitions",
-    desc: "Algorithmic challenges and competitive coding events",
+    title: "Programming:",
+    desc: "Build the logic that solves real problems and brings your wildest digital dreams to life.",
     icon: Code,
     gradient: "from-blue-500 to-cyan-500",
   },
   {
-    title: "Robotics Challenges",
-    desc: "Design, build, and program intelligent robots",
+    title: "Robotics: ",
+    desc: "Blend hardware and heart to build machines that move the world forward.",
     icon: Bot,
     gradient: "from-purple-500 to-pink-500",
   },
   {
-    title: "AI & ML Events",
-    desc: "Solve real-world problems using artificial intelligence",
+    title: "Startup Expo: ",
+    desc: "Do you have a plan to change the world? Pitch your vision to the people who can help you grow it into a reality.",
     icon: Brain,
     gradient: "from-indigo-500 to-blue-500",
   },
   {
-    title: "Cybersecurity Workshops",
-    desc: "Learn ethical hacking and system defense",
+    title: "AI/ML Events:",
+    desc: "See how your smart solutions can make the world a little brighter and much more efficient.",
     icon: Shield,
     gradient: "from-red-500 to-orange-500",
   },
   {
     title: "Gaming Arena",
-    desc: "Compete in high-energy esports tournaments",
+    desc: "Celebrate the fun side of tech. Whether you are a creator or a player, join a community that shares your love for epic stories.",
     icon: Gamepad2,
     gradient: "from-green-500 to-emerald-500",
   },
@@ -79,23 +80,23 @@ const competitions = [
 
 const whyJoin = [
   {
-    title: "Skill Development",
-    desc: "Hands-on experience through competitions, workshops, and challenges",
-    icon: Wrench,
+    title: "Global Exposure:",
+    desc: "Showcase your talent to a worldwide audience.",
+    icon: Globe,
   },
   {
-    title: "Certifications & Awards",
-    desc: "Earn certificates, prizes, and recognition for your achievements",
+    title: "Expert Mentorship:",
+    desc: "Learn directly from the giants of the industry.",
     icon: Award,
   },
   {
-    title: "Networking Opportunities",
-    desc: "Connect with industry experts, mentors, and like-minded peers",
+    title: "Networking:",
+    desc: "Build connections that last a lifetime.",
     icon: Users,
   },
   {
     title: "Career Growth",
-    desc: "Boost your resume and open doors to internships and jobs",
+    desc: "Open doors to internships and dream jobs.",
     icon: TrendingUp,
   },
 ];
@@ -121,9 +122,11 @@ export default function Home() {
             </h2>
 
             <p className="mt-6 text-lg text-gray-600 max-w-xl">
-              TechFest is Pakistan’s flagship student technology festival,
+              {/* TechFest is Pakistan’s flagship student technology festival,
               bringing innovation, competition, and industry collaboration
-              under one platform.
+              under one platform. */}
+              Innovation thrives when we break down the walls between classrooms and boardrooms. TechFest creates a high-octane ecosystem where students showcase their inventions directly to the creators of the modern economy.
+
             </p>
 
             <div className="mt-10 grid grid-cols-3 gap-8">
@@ -175,11 +178,11 @@ export default function Home() {
       <section className="px-4 lg:px-40 py-28 bg-gray-50">
   <div className="max-w-[1200px] mx-auto text-center">
     <h2 className="text-5xl font-extrabold">
-      Explore Our <span className="text-gradient">Competitions</span>
+      Find Your Stage.<span className="text-gradient"> Share Your Spark.</span>
     </h2>
 
     <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
-      Choose from technical, creative, and competitive events
+      Whether you love to build, design, or solve, there is a place here for your talent to shine.
     </p>
 
     <div className="mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -243,7 +246,7 @@ export default function Home() {
       <section className="px-4 lg:px-40 py-28 bg-white">
   <div className="max-w-[1200px] mx-auto text-center">
     <h2 className="text-5xl font-extrabold">
-      Why Join <span className="text-gradient">TechFest 2026?</span>
+      Network to grow your <span className="text-gradient">Networth</span>
     </h2>
 
     <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
@@ -303,7 +306,7 @@ export default function Home() {
     </h2>
 
     <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
-      Get insights from experts shaping the future of technology.
+      Gain wisdom from the leaders who paved the way.
     </p>
 
     <div className="mt-16 grid md:grid-cols-2 lg:grid-cols-4 gap-10">
@@ -367,7 +370,7 @@ export default function Home() {
     </h2>
 
     <p className="mt-4 text-gray-600 max-w-xl mx-auto">
-      Partnering with leading technology companies worldwide.
+We collaborate with industry leaders to fuel your growth.
     </p>
 
     <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-10">
@@ -391,11 +394,13 @@ export default function Home() {
   <section className="px-4 lg:px-40 py-28 bg-gray-50">
   <div className="max-w-[1200px] mx-auto text-center">
     <h2 className="text-5xl font-extrabold">
-      What People Say About <span className="text-gradient">TechFest</span>
+      Real Stories from 
+ <span className="text-gradient"> TechFest</span>
     </h2>
 
     <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
-      Hear from participants who experienced TechFest firsthand.
+      Listen to the people who found their path at our event.
+
     </p>
 
     <div className="mt-16 grid md:grid-cols-3 gap-10">
@@ -444,7 +449,8 @@ export default function Home() {
     </h2>
 
     <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
-      A glimpse into the energy, innovation, and excitement of TechFest.
+     Glimpses of innovation, collaboration, and pure tech energy. 
+
     </p>
 
     <div className="mt-16 columns-1 sm:columns-2 lg:columns-3 gap-6">
@@ -484,7 +490,8 @@ export default function Home() {
             Ready to Make Your Mark?
           </h2>
           <p className="mt-4 text-white/80">
-            Join thousands of students at TechFest 2026
+           The world is waiting for your idea. Don't let it stay a dream.
+
           </p>
           <button className="mt-10 px-10 py-4 bg-white text-primary font-bold rounded-xl hover:scale-105 transition">
             Register Now
